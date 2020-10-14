@@ -15,8 +15,7 @@ frase_usuario([_|P], W) :-
     frase_usuario(P, W).
 
 identifier(N, [X|_]) :-
-    N = X,
-    write(N),
-    write(" se encuentra en el diccionario").
+    N = X.
+
 identifier(N, [_|Y]) :-
     identifier(N, Y).

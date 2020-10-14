@@ -1,5 +1,4 @@
 
-
 /* restaurante(nombre, orientacion, menu, direccion, capacidad) 
 nombre: string
 orientacion: string
