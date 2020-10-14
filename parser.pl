@@ -1,13 +1,22 @@
+:- ensure_loaded(restaurantes).
+
 /* Analisis de palabras */
 
-/*Funcion miembro de una lista.*/
-miembro(B, [X| _]):- B = X.
-miembro(B, [_|Y]):- miembro(B, Y).
-
 /* Analiza si en una oracion existe coincidencia con la base de datos.*/
-queComer([], Output):- false.
-queComer([P|Oracion], Output):-
-    miembro(P, restaurante(X)),
-    queComer(Oracion, Output).
 
-/* Prueba */
+frase_usuario(X) :-
+    X = [],
+    write("Ninguna palabra coincide con las del diccionario."),
+    false.
+frase_usuario([W|_]) :-
+    restaurante(R),
+    identifier(W, R).
+frase_usuario([_|P]) :-
+    frase_usuario(P).
+
+identifier(N, [X|_]) :-
+    N = X,
+    write(N),
+    write(" se encuentra en el diccionario").
+identifier(N, [_|Y]) :-
+    identifier(N, Y).
