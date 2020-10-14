@@ -9,3 +9,5 @@ queComer([], Output):- false.
 queComer([P|Oracion], Output):-
     miembro(P, restaurante(X)),
     queComer(Oracion, Output).
+
+/* Prueba */
