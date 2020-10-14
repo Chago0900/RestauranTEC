@@ -1,3 +1,5 @@
+
+
 /* restaurante(nombre, orientacion, menu, direccion, capacidad) 
 nombre: string
 orientacion: string
@@ -7,18 +9,21 @@ capacidad: int*/
 
 restaurante(["Bella Italia", 
             "italiano", 
-            ["Pizza", ["Jamon y queso", "Suprema", "Hawaina"], "Calzone", [], "Espaguetti", []], 
+            ["Pizza", ["Jamon y queso", "Suprema", "Hawaina"], "Calzone", [], "Espaguetti", []],
+            ["vino", "Fanta"], 
             ["San Pedro", "300m Sur de la entrada principal de la Universidad de Costa Rica"], 
             10]).
 
 restaurante(["Italianísimo", 
             "italiano", 
-            ["Pizza", ["Pepperoni"], "Calzone", [], "Espaguetti", []], 
+            ["Pizza", ["Pepperoni"], "Calzone", [], "Espaguetti", []],
+            ["Coca", "carvezas"], 
             ["Alajuela", "50m Sur de la entrada Banco de Costa Rica"], 
             50]).
 
 restaurante(["McBurguesa", 
             "Comida Rápida", 
             ["Hamburguesa", [], "Tacos", [], "Papas", []], 
+            ["coca", "Fanta"],
             ["Cartago", "100m Norte de la entrada principal del TEC"], 
             20]).
