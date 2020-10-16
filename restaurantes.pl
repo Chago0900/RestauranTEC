@@ -1,4 +1,3 @@
-
 /* restaurante(nombre, orientacion, menu, direccion, capacidad) 
 nombre: string
 orientacion: string
@@ -49,7 +48,7 @@ restaurante(["NachosCR",
 restaurante(["Subs", 
             "sandwich", 
             "sub", "sopa", 
-            "cafe", "pepsi"
+            "cafe", "pepsi",
             "curridabat", "200m Norte de Plaza Freses.",
             "Recuerde su mascarilla y careta.", 
             25]).
