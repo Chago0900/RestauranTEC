@@ -1,4 +1,9 @@
 # RestauranTEC
+
+Este consiste en un sistema experto con la capacidad de analizar las entradas de un usuario en relación a ciertas preguntas específicas de modo que busca coincidencias en la base de datos para sugerir un restaurante donde comer.
+
+Intenta ofrecer una conversación fluida y natural sin desviarse del objetivo, que es retornar un restaurante.
+
 ## Manual de usuario.
 
 ### Requerimientos.
@@ -16,3 +21,4 @@ Tras instalar Prolog, es importante que para correr un archivo se debe proporcio
 1. Descargar los archivos y ejecutar el main.
 2. Correr el comando `restauranTEC.` para comenzar a interactuar con el sistema.
 3. Contestar las preguntas y presionar enter hasta obtener una sugerencia final.
+
