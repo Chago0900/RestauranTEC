@@ -38,26 +38,37 @@ frase_usuario([_|P], W) :-
  **Parámetros:**
  - X: lista de palabras generada a partir de la oración que digita el usuario.
  - L: lista de que contiene los elemento de la base de datos.
- - C: contador de la cantidad de veces que se ha repetido una palabra de la lista X en la lista L, siempre debe empezar en 0.
+ - C: contador de la cantidad de veces que se ha repetido una palabra de la lista X en la lista L.
 */
 
 repetitions(X, L, C) :-
-    L = [],
-    write("Recorrido de lista finalizado"), nl,
-    write("cantidad de repeticiones:  "),
-    write(C).
-repetitions(X, L, C) :-
-    repetitions_aux(X, L, C, X).
+    repetitions_aux(X, L, 0, X, S),
+    C = S.
 
-repetitions_aux(X, [J|K], C, Temp) :-
+repetitions_aux(X, L, C, Temp, S) :-
+    L = [],
+    C = S.
+repetitions_aux(X, [J|K], C, Temp, S) :-
     Temp = [],
-    repetitions(X, K, C).
-repetitions_aux(X, [J|K], C, [H|_]) :-
+    repetitions_aux(X, K, C, X, S).
+repetitions_aux(X, [J|K], C, [H|_], S) :-
     miembro(H, J),
     R is C + 1,
-    repetitions(X, K, R).
-repetitions_aux(X, L, C, [_|T]) :-
-    repetitions_aux(X, L, C, T).
+    repetitions_aux(X, K, R, X, S).
+repetitions_aux(X, L, C, [_|T], S) :-
+    repetitions_aux(X, L, C, T, S).
     
-    
-
+/*
+get_restaurante(X, L, C, Temp) :-
+    L = [],
+    C = S.
+get_restaurante(X, [J|K], C, Temp, S) :-
+    Temp = [],
+    get_restaurante(X, K, C, X, S).
+get_restaurante(X, [J|K], C, [H|_], S) :-
+    miembro(H, J),
+    R is C + 1,
+    get_restaurante(X, K, R, X, S).
+get_restaurante(X, L, C, [_|T], S) :-
+    get_restaurante(X, L, C, T, S).
+*/
