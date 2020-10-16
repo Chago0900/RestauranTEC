@@ -1,14 +1,5 @@
 :- ensure_loaded(parser).
- /*
- **Descripción:** asocia los valores de la base de datos de 
- restaurantes a un tipo y una pregunta para responder en la 
- interfaz.
-**Parámetros:** 
-- valor: string de la base de datos.
-- tipo: indica el tipo de valor que representa.
-- pregunta: respuesta del sistema experta para el usuario de 
-modo que la conversación continúe.
-*/
+
 
 tipoValor(A, B, 1, "Gracias por usar RestauranTEC, ¡Lindo dia!"):- 
     get_restaurante([A], [R|_]), 
@@ -22,6 +13,17 @@ tipoValor(A, B, 1, "Gracias por usar RestauranTEC, ¡Lindo dia!"):-
 
 tipoValor(A, B, C, Y):- tipoValor(A, B, Y).
 
+
+ /*
+ **Descripción:** asocia los valores de la base de datos de 
+ restaurantes a un tipo y una pregunta para responder en la 
+ interfaz.
+**Parámetros:** 
+- valor: string de la base de datos.
+- tipo: indica el tipo de valor que representa.
+- pregunta: respuesta del sistema experta para el usuario de 
+modo que la conversación continúe.
+*/
 tipoValor("italiano", estilo,  "¿Algún plato en particular?").
 tipoValor("rápida", estilo, "¿Algún plato en particular?").
 tipoValor("italiana", estilo,  "¿Algún plato en particular?").
