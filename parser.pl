@@ -48,7 +48,7 @@ repetitions(X, L, C) :-
 repetitions_aux(X, L, C, Temp, S) :-
     L = [],
     C = S.
-repetitions_aux(X, [J|K], C, Temp, S) :-
+repetitions_aux(X, [_|K], C, Temp, S) :-
     Temp = [],
     repetitions_aux(X, K, C, X, S).
 repetitions_aux(X, [J|K], C, [H|_], S) :-
@@ -59,16 +59,24 @@ repetitions_aux(X, L, C, [_|T], S) :-
     repetitions_aux(X, L, C, T, S).
     
 /*
-get_restaurante(X, L, C, Temp) :-
-    L = [],
-    C = S.
-get_restaurante(X, [J|K], C, Temp, S) :-
-    Temp = [],
-    get_restaurante(X, K, C, X, S).
-get_restaurante(X, [J|K], C, [H|_], S) :-
-    miembro(H, J),
-    R is C + 1,
-    get_restaurante(X, K, R, X, S).
-get_restaurante(X, L, C, [_|T], S) :-
-    get_restaurante(X, L, C, T, S).
+ **Descripción:** recibe la oración que redacta el usuario y retorna el restaurante que tenga alguna palabra de la oración en su base de datos.
+
+**Parámetros:**
+ - X: lista de palabras generada a partir de la oración que digita el usuario.
+ - L: lista de que contiene los elemento de la base de datos.
+ - R: valor de retorno que contiene una lista con la informacion del restaurante.
 */
+
+get_restaurante(X, L, R) :-
+    get_restaurante_aux(X, L, S, X),
+    R = S.
+
+get_restaurante_aux(X, [_|K], S, Temp) :-
+    Temp = [],
+    get_restaurante_aux(X, K, S, X).
+get_restaurante_aux(X, [J|_], S, [H|_]) :-
+    miembro(H, J),
+    S = J.
+get_restaurante_aux(X, L, S, [_|T]) :-
+    get_restaurante_aux(X, L, S, T).
+
