@@ -29,7 +29,7 @@ restaurante(["McBurguesa",
             "Sólo se permiten burbujas.", 
             20]).
 
-restaurante(["BurgerFantasy", 
+restaurante(["Burger Fantasy", 
             "rapida", 
             "hamburguesa", "nachos",  "papas", 
             "coca", "fanta",
